@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أمانة المرأة — حزب مستقبل وطن | محافظة الشرقية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0e224d;
+      --navy-dark: #081533;
+      --blue: #1565c0;
+      --sky: #1e88e5;
+      --gold: #d4a017;
+      --gold-light: #f6e3a1;
+      --bg: #f4f7fb;
+      --white: #ffffff;
+      --text: #1c273c;
+      --muted: #5a6782;
+      --border: #dfe6f2;
+      --shadow: 0 12px 32px rgba(14, 34, 77, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .nav-badge {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: var(--white);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 16px rgba(21, 101, 192, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .nav-badge:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #163b82 100%);
+      color: var(--white);
+      padding: 64px 20px 76px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      left: -120px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(30, 136, 229, 0.28), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -140px;
+      right: -100px;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(212, 160, 23, 0.22), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(212, 160, 23, 0.18);
+      border: 1px solid rgba(212, 160, 23, 0.55);
+      color: var(--gold-light);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: #ffd56b;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: #dce6f7;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e0ac1b, #c5910c);
+      color: var(--navy-dark);
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 14px 30px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 24px rgba(212, 160, 23, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(212, 160, 23, 0.45);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: 12px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 24px;
+      padding: 28px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card img {
+      width: 170px;
+      height: 170px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
+    }
+
+    .hero-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .hero-card small {
+      color: #ffd56b;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 20px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-header .sub {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 0.92rem;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .section-header .line {
+      width: 72px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--gold));
+      margin: 0 auto;
+      border-radius: 4px;
+    }
+
+    /* About & Icons */
+    .about-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .about-box p {
+      font-size: 1.06rem;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .about-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .pillar-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue);
+    }
+
+    .pillar-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(21, 101, 192, 0.12), rgba(212, 160, 23, 0.16));
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .pillar-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--blue);
+    }
+
+    .pillar-card h3 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .pillar-card p {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    /* Leaders */
+    .leaders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 28px;
+    }
+
+    .leader-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.25s ease;
+      position: relative;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .leader-card.featured {
+      border: 2px solid var(--gold);
+    }
+
+    .leader-img-wrap {
+      width: 100%;
+      height: 310px;
+      background: #e9eff8;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .leader-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .leader-role-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      left: 12px;
+      background: rgba(14, 34, 77, 0.92);
+      color: #ffd56b;
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .leader-info {
+      padding: 22px 20px 26px;
+    }
+
+    .leader-info h3 {
+      font-size: 1.22rem;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .leader-info p {
+      font-size: 0.96rem;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* Registration CTA */
+    .register-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, #164496 100%);
+      border-radius: 24px;
+      padding: 46px 32px;
+      color: var(--white);
+      text-align: center;
+      box-shadow: 0 18px 40px rgba(14, 34, 77, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .register-banner h2 {
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .register-banner p {
+      font-size: 1.05rem;
+      color: #e1ebfc;
+      max-width: 680px;
+      margin: 0 auto 26px;
+    }
+
+    .notice-box {
+      max-width: 720px;
+      margin: 24px auto 0;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 213, 107, 0.45);
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-size: 0.92rem;
+      color: #fff6d6;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 230px;
+      box-shadow: var(--shadow);
+      border: 2px solid var(--white);
+      background: #dce5f2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-dark);
+      color: #cbd7ee;
+      padding: 36px 20px;
+      text-align: center;
+      margin-top: 40px;
+      border-top: 4px solid var(--gold);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-inner img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .footer-inner strong {
+      color: var(--white);
+      font-size: 1.1rem;
+    }
+
+    .footer-inner small {
+      color: #8fa3c7;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero p {
+        margin-inline: auto;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-card {
+        max-width: 340px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر العلوي -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <img src="assets/logo.png" alt="شعار حزب مستقبل وطن" />
+        <div class="brand-text">
+          <strong>حزب مستقبل وطن — محافظة الشرقية</strong>
+          <span>أمانة المرأة · بوابة العضويات الجديدة</span>
+        </div>
+      </div>
+      <a href="https://forms.gle/nghvACTwic5FjJLW7" target="_blank" rel="noopener" class="nav-badge">
+        تسجيل عضوة جديدة ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- الواجهة الرئيسية -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-tag">كلنا نعمل من أجل مصر · أمانة الشرقية</span>
+        <h1>أمانة المرأة بمحافظة الشرقية<br /><span>شريك أساسي في البناء والتنمية</span></h1>
+        <p>
+          البوابة الرسمية لتسجيل العضويات الجديدة بأمانة المرأة بحزب مستقبل وطن بمحافظة الشرقية، لفتح آفاق المشاركة السياسية والمجتمعية الفاعلة أمام سيدات وفتيات المحافظة.
+        </p>
+        <div class="hero-actions">
+          <a href="https://forms.gle/nghvACTwic5FjJLW7" target="_blank" rel="noopener" class="btn-primary">
+            سجّلي بياناتك الآن كعضوة جديدة ✦
+          </a>
+          <a href="#about" class="btn-secondary">
+            تعرّفي على الأمانة
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="assets/logo.png" alt="شعار حزب مستقبل وطن" />
+        <h3>حزب مستقبل وطن</h3>
+        <small>أمانة المرأة — محافظة الشرقية</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- نبذة تعريفية وأيقونات -->
+  <section class="section" id="about">
+    <div class="section-header">
+      <span class="sub">رؤيتنا ورسالتنا</span>
+      <h2>عن أمانة المرأة بمحافظة الشرقية</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="about-box">
+      <p>
+        تُعد <strong>أمانة المرأة بحزب مستقبل وطن بمحافظة الشرقية</strong> منبرًا تنظيميًا ومجتمعيًا رائدًا يستهدف تمكين المرأة الشرقاوية وتعزيز حضورها الفاعل في الحياة العامة والعمل السياسي والتنموي، انطلاقًا من إيمان الحزب العميق بدور المرأة المحوري في بناء الأسرة وتماسك المجتمع ودعم مسيرة الدولة المصرية.
+      </p>
+      <p>
+        وتعمل الأمانة على استقطاب وتأهيل الكوادر النسائية المتميزة في مختلف مراكز ومدن وقرى محافظة الشرقية، وإطلاق المبادرات التوعوية والتنموية والخدمية التي تلبي احتياجات المرأة والأسرة بروح من الانتماء والعمل المؤسسي المنظم.
+      </p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3>التمكين السياسي والتنظيمي</h3>
+        <p>إعداد كوادر نسائية قادرة على المشاركة الفعالة في العمل العام وصنع القرار داخل مراكز وأقسام المحافظة.</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+        <h3>المبادرات المجتمعية والخدمية</h3>
+        <p>تنظيم قوافل الدعم المجتمعي والفعاليات الإنسانية التي تصل إلى الأسر الأولى بالرعاية في قرى ومدن الشرقية.</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+        </div>
+        <h3>التوعية والتثقيف وبناء القدرات</h3>
+        <p>عقد ندوات وورش عمل متخصصة لرفع الوعي القانوني والصحي والأسري وتنمية مهارات القيادة لدى المرأة.</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </div>
+        <h3>التمكين الاقتصادي للمرأة</h3>
+        <p>دعم المشروعات الصغيرة ومتناهية الصغر وتشجيع المرأة المعيلة ورائدات الأعمال على الإنتاج والاستقلال الاقتصادي.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- قيادات الحزب والأمانة -->
+  <section class="section" id="leaders">
+    <div class="section-header">
+      <span class="sub">الهيكل القيادي</span>
+      <h2>قيادات الحزب وأمانة المرأة</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="leaders-grid">
+      <article class="leader-card">
+        <div class="leader-img-wrap">
+          <img src="assets/abdelgawad.jpg" alt="النائب أحمد عبد الجواد" />
+          <span class="leader-role-badge">القيادة المركزية للحزب</span>
+        </div>
+        <div class="leader-info">
+          <h3>النائب أحمد عبد الجواد</h3>
+          <p>نائب رئيس الحزب والأمين العام</p>
+        </div>
+      </article>
+
+      <article class="leader-card">
+        <div class="leader-img-wrap">
+          <img src="assets/ghorab.jpg" alt="الأستاذ الدكتور ممدوح غراب" />
+          <span class="leader-role-badge">قيادة محافظة الشرقية</span>
+        </div>
+        <div class="leader-info">
+          <h3>الأستاذ الدكتور ممدوح غراب</h3>
+          <p>أمين حزب مستقبل وطن بمحافظة الشرقية</p>
+        </div>
+      </article>
+
+      <article class="leader-card featured">
+        <div class="leader-img-wrap">
+          <img src="assets/riham.jpg" alt="الأستاذة الدكتورة ريهام إيهاب زايد" />
+          <span class="leader-role-badge">أمانة المرأة — الشرقية</span>
+        </div>
+        <div class="leader-info">
+          <h3>الأستاذة الدكتورة ريهام إيهاب زايد</h3>
+          <p>أمينة المرأة بحزب مستقبل وطن بمحافظة الشرقية</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- قسم التسجيل -->
+  <section class="section" id="register">
+    <div class="register-banner">
+      <h2>انضمي الآن إلى أمانة المرأة بالشرقية</h2>
+      <p>
+        هذا المسار مخصص لـ <strong>تسجيل العضويات الجديدة فقط</strong>. اضغطي على الزر بالأسفل للانتقال مباشرة إلى استمارة التسجيل الرسمية وإدخال بياناتك بدقة.
+      </p>
+      <a href="https://forms.gle/nghvACTwic5FjJLW7" target="_blank" rel="noopener" class="btn-primary">
+        الانتقال إلى نموذج تسجيل عضو جديد ↗
+      </a>
+      <div class="notice-box">
+        <strong>تنبيه تنظيمي:</strong> يُرجى التأكد من كتابة الاسم رباعيًا والرقم القومي ورقم الهاتف والمركز/القسم التابع له بدقة داخل الاستمارة الرسمية، وعدم مشاركة بياناتك الشخصية عبر أي روابط غير رسمية.
+      </div>
+    </div>
+  </section>
+
+  <!-- لقطات من فعاليات واجتماعات الأمانة -->
+  <section class="section" id="gallery">
+    <div class="section-header">
+      <span class="sub">من قلب العمل التنظيمي</span>
+      <h2>لقطات من اجتماعات وفعاليات الأمانة</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="assets/gallery1.jpg" alt="فريق العمل بأمانة محافظة الشرقية" />
+      </div>
+      <div class="gallery-item">
+        <img src="assets/gallery2.jpg" alt="اجتماع أمانة المرأة بمحافظة الشرقية" />
+      </div>
+      <div class="gallery-item">
+        <img src="assets/gallery3.jpg" alt="قيادات أمانة الشرقية خلال الاجتماع التنظيمي" />
+      </div>
+      <div class="gallery-item">
+        <img src="assets/gallery4.jpg" alt="أمين المحافظة وأمينة المرأة خلال الاجتماع" />
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer>
+    <div class="footer-inner">
+      <img src="assets/logo.png" alt="شعار حزب مستقبل وطن" />
+      <strong>حزب مستقبل وطن — أمانة المرأة بمحافظة الشرقية</strong>
+      <small>بوابة تسجيل العضويات الجديدة · جميع الحقوق محفوظة</small>
+    </div>
+  </footer>
+
+</body>
+</html>
